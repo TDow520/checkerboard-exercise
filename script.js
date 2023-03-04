@@ -1,39 +1,52 @@
 // Your JS goes here
 
-let count = 0
-
-
-
 function sq(){
     let square = document.createElement('div');
     square.style.width = '11.1%';
     square.style.paddingBottom = '11.1%'
     square.style.float = 'left';
+    square.style.position = "relative";
     return square;
     
 
 }
 
 
-function buildCheckerBoard(count){
-    let redSq = sq();
-    redSq.style.backgroundColor = 'red';
-    let blkSq = sq();
-    blkSq.style.backgroundColor = 'black';
-    document.body.append(redSq)
-    
-    console.log(count)  
-    document.body.append(blkSq); 
-    count = count + 1
-    console.log(count)
+function buildCheckerBoard(){
+    for(let i = 0; i <= 8; i++){
+        for(let j = 0; j <= 8; j++ ){
+            let blkSq = sq();
+            blkSq.style.backgroundColor = 'black';
+            if ((i + j) % 2 == 0){
+                document.body.append(blkSq);
+            } else {
+                let redSq = sq();
+                redSq.style.backgroundColor = 'red';
+                document.body.append(redSq);
+            }
+        }
     }
+    // document.body.appendChild(redSq)
+    // document.body.append(blkSq); 
+}
     
 
 
 
-while (count < 82){
-    buildCheckerBoard(count)
+// for(let x = 0; x < 8; x ++){
+//     buildCheckerBoard()
 
-}
+// }
+buildCheckerBoard()
+
+// for(let i = 0; i <= 8; i++){
+//     for(let j = 0; j <= 8; j++ ){
+//         if ((i + j) % 2 ==0){
+//             document.body.append(blkSq);
+//         } else {
+//             document.body.append(redSq);
+//         }
+//     }
+// }
 
 
