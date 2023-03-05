@@ -11,17 +11,22 @@ function sq(){
 
 }
 
+function randomnColor(){
+    let color = "#"  + Math.floor(Math.random()*16777215).toString(16);
+    return color;
+
+}
 
 function buildCheckerBoard(){
     for(let i = 0; i <= 8; i++){
         for(let j = 0; j <= 8; j++ ){
             let blkSq = sq();
-            blkSq.style.backgroundColor = 'black';
+            blkSq.style.backgroundColor = randomnColor();
             if ((i + j) % 2 == 0){
                 document.body.append(blkSq);
             } else {
                 let redSq = sq();
-                redSq.style.backgroundColor = 'red';
+                redSq.style.backgroundColor = randomnColor();
                 document.body.append(redSq);
             }
         }
